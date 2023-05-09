@@ -1,0 +1,5 @@
+Se incluírmos a diretriz `#include <stdio.h>` no início, o código compila e a saída é: 
+
+1020304050
+
+Se não incluírmos a diretriz o código nem chega a compilar, visto que para usar o `printf` é necessário incluir a biblioteca `stdio`
