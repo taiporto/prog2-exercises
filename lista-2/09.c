@@ -6,32 +6,23 @@ e retorna este número escrito ao contrário. Ex: 431 <-> 134. */
 unsigned int INVERTE(unsigned int num);
 
 int main() {
+	unsigned int numero_original;
 
+  printf("Insira um numero inteiro positivo:\n");
+  
+ 	scanf("%u", &numero_original);
+
+	printf("%u", INVERTE(numero_original));
 }
 
 unsigned int INVERTE(unsigned int num){
+  unsigned int num_invertido = 0;
+  
   while(num > 0){
     unsigned int algarismo = num % 10;
+    num_invertido = (num_invertido * 10) + algarismo;
+    num /= 10;
   }
+
+  return num_invertido;
 }
-
-/** ChatGPT's solution */
-
-/* #include <stdio.h>
-
-int main() {
-    unsigned int num, inverted_num = 0;
-
-    printf("Enter an unsigned integer: ");
-    scanf("%u", &num);
-
-    while (num > 0) {
-        unsigned int digit = num % 10;
-        inverted_num = (inverted_num * 10) + digit;
-        num /= 10;
-    }
-
-    printf("Inverted number: %u", inverted_num);
-
-    return 0;
-} */
