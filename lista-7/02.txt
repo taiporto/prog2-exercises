@@ -1,0 +1,8 @@
+Impressão final: "etset Otimo"
+
+Execução:
+  - O ponteiro p é designado para o endereço da última letra da string frase;
+  - Enquanto o valor do ponteiro p não for igual a um espaço, a string misterio vai sendo criada com as letras da string frase em reverso, gerando "etset" como valor da string misterio. Isso é feito diminuindo o endereço de p em um (indo para a letra anterior) e aumentando o índice i usado para acessar a string misterio em um a cada iteração do while.
+  - Finalizado o while, adicionamos um espaço na string misterio depois da última letra e acrescentamos o indíce i em um para posicionar ele no próximo espaço da string;
+  - Então, temos um novo while que para no primeiro espaço que encontrar. Dentro dele, designamos os próximos espaços da string misterio para as letras do início da string frase, começando no índice 0 (que é o valor de j) e aumentando positivamente. Assim, adicionamos à string misterio dentro desse while o valor "Otimo".
+  - Por fim, adicionamos à string misterio o caracter de controle '\0' que determina o fim de uma string em C e imprimimos a string final, que é "etset Otimo".
