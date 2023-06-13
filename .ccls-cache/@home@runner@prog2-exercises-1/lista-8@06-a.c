@@ -1,13 +1,7 @@
-// Vamos supor que várias pedras do jogo de xadrez estão no tabuleiro. Para
-// facilitar a indicação das peças, vamos convencionar: 1 – peões 3 – torres 5 –
-// reis 0 – ausência de peças 2 – cavalos 4 – bispos 6 – rainhas O tabuleiro é o
-// seguinte: 1 3 0 5 4 0 2 1 1 0 1 0 0 1 0 0 0 0 0 0 1 0 6 0 1 0 0 1 1 0 0 1 0 1
-// 0 4 0 0 1 0 0 0 3 1 0 0 1 1 1 0 6 6 0 0 1 0 1 0 5 0 1 1 0 6 a) Construa um
-// programa que determine a soma total de peões e bispos e a quantidade de
-// posições com ausência de peças; b) Escreva outro programa que determine qual
-// a quantidade de cada tipo de peça no tabuleiro.
+#include <stdio.h>
 
 #define TAM_TABULEIRO 8
+#define VAZIO 0
 #define PEAO 1
 #define CAVALO 2
 #define TORRE 3
@@ -15,12 +9,24 @@
 #define REI 5
 #define RAINHA 6
 
+int contaPeca(int tabuleiro[TAM_TABULEIRO][TAM_TABULEIRO], int peca);
+
 int main() {
   int tabuleiro[TAM_TABULEIRO][TAM_TABULEIRO] = {
       {1, 3, 0, 5, 4, 0, 2, 1}, {1, 0, 1, 0, 0, 1, 0, 0},
       {0, 0, 0, 0, 1, 0, 6, 0}, {1, 0, 0, 1, 1, 0, 0, 1},
       {0, 1, 0, 4, 0, 0, 1, 0}, {0, 0, 3, 1, 0, 0, 1, 1},
       {1, 0, 6, 6, 0, 0, 1, 0}, {1, 0, 5, 0, 1, 1, 0, 6}};
+
+  int contador_peoes, contador_bispos, contador_vazios;
+
+  contador_peoes = contaPeca(tabuleiro, PEAO);
+  contador_bispos = contaPeca(tabuleiro, BISPO);
+  contador_vazios = contaPeca(tabuleiro, VAZIO);
+
+  printf("Quantidade de peoes e bispos somados: %d\n",
+         contador_peoes + contador_bispos);
+  printf("Quantidade de espaços vazios: %d\n", contador_vazios);
 }
 
 int contaPeca(int tabuleiro[TAM_TABULEIRO][TAM_TABULEIRO], int peca) {
